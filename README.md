@@ -1,36 +1,36 @@
-# Liferay OpenAI Content Creation Wizard 
+# Liferay OpenAI コンテンツ作成ウィザード
 
-With this application, creating content within Liferay is a breeze!
+このアプリケーションにより、Liferay内でのコンテンツ作成が簡単になります！
 
-Consider this scenario: You can create 15 products across 5 categories in just 35 seconds with a single prompt from you. The magic happens with integrating OpenAI's API for content creation and Liferay's APIs for seamless storage based on your prompts.
+例えば、あなたのプロンプト一つで、わずか35秒で5つのカテゴリに15個の製品を作成できます。この魔法は、OpenAIのAPIによるコンテンツ作成とLiferayのAPIによるシームレスな保存の統合によって実現されています。
 
-Utilizing this OpenAI Wizard doesn't just speed up content creation, which many of us are already doing with AI. It goes the extra mile by seamlessly loading it into Liferay through Liferay's Extensive Headless APIs. Big kudos to Steven Lu, who helped identify the potential to optimize the time spent on setting up commerce products, categories, and SKUs through Liferay's Headless APIs.
+このOpenAIウィザードは、多くの人が既にAIで行っているコンテンツ作成を高速化するだけでなく、Liferayの包括的なHeadless APIを通じてLiferayにシームレスに読み込むことで、さらに一歩先を行きます。LiferayのHeadless APIを通じてコマース製品、カテゴリ、SKUの設定に費やす時間を最適化する可能性を特定するのに役立ったSteven Luに大きな感謝を捧げます。
   
 ![AIWizard-Screenshot](https://github.com/weskempa-liferay/liferay-openai-demo-wizard/assets/68334638/eafd4327-492c-4fcf-81e8-2d3abfa9f8f7)
 
-## The Liferay Content Wizard currently supports generating these asset types: 
+## Liferayコンテンツウィザードが現在サポートしているアセットタイプ：
 
-- **Accounts**
-- **Blogs with Images**
-- **Taxonomy with Category Structure**
-- **Multilingual FAQs**
-- **Generation of Images within Documents and Media with a choice of dimensions and quality**
-- **Knowledge Base Folders and Articles**
-- **Message Board Sections, Threads, and Messages**
-- **Multilingual News Articles with Images**
-- **Data for Custom Liferay Objects**
-- **Organization Structures**
-- **Page Hierarchies (AI Generation and File Upload)**
-- **Commerce Categories and Products with Images (AI Generation and File Upload)**
-- **Users (AI Generation and File Upload)**
-- **User Groups**
-- **Warehouses with Latitude and Longitude**
-- **Wiki Nodes and Pages**
+- **アカウント**
+- **画像付きブログ**
+- **カテゴリ構造付きタクソノミー**
+- **多言語FAQ**
+- **ドキュメントとメディア内での画像生成（サイズと品質を選択可能）**
+- **ナレッジベースフォルダと記事**
+- **メッセージボードセクション、スレッド、メッセージ**
+- **画像付き多言語ニュース記事**
+- **カスタムLiferayオブジェクトのデータ**
+- **組織構造**
+- **ページ階層（AI生成とファイルアップロード）**
+- **画像付きコマースカテゴリと製品（AI生成とファイルアップロード）**
+- **ユーザー（AI生成とファイルアップロード）**
+- **ユーザーグループ**
+- **緯度と経度付き倉庫**
+- **Wikiノードとページ**
 
-As we move forward, expect more options and deeper integrations for content types.
+今後、より多くのオプションとコンテンツタイプのより深い統合が期待されます。
 
 > [!TIP]
-> Frequent updates are expected so it is recommended that you update often. 
+> 頻繁な更新が予想されるため、定期的な更新をお勧めします。
 
 ![Wizard Dashboard](https://github.com/weskempa-liferay/liferay-openai-demo-wizard/assets/68334638/5f4f6f98-24c5-4785-8ac8-da12b75661da)
 
@@ -39,7 +39,7 @@ As we move forward, expect more options and deeper integrations for content type
 ![287095038-7b60a262-e9af-47b4-bbae-7b58d30ee367](https://github.com/weskempa-liferay/liferay-openai-demo-wizard/assets/68334638/e7ed2ee8-a369-41da-aae2-deccf4c97b48)
 
 
-Technologies used:
+使用技術：
 
 - [OpenAI API](https://openai.com/api/)
 - [Node.js](https://nodejs.org/en/)
@@ -48,18 +48,18 @@ Technologies used:
 - [TailwindCSS](https://tailwindcss.com/)
 - [Highlight.js](https://highlightjs.org/)
 
-## Authentication
+## 認証
 
-You have two options of authentication using Liferay Portal
+Liferayポータルを使用した認証には2つのオプションがあります
 
-1. Basic
+1. 基本認証
 2. OAuth2
 
-The **Basic** authentication is ideal for localhost, dev, staging environments and the authentication method is using **email** and **password**, you must have sufficient permissions to consume the APIs used on the target asset.
+**基本認証**は、localhost、開発、ステージング環境に最適で、認証方法は**メールアドレス**と**パスワード**を使用します。ターゲットアセットで使用されるAPIを消費するための十分な権限が必要です。
 
-**OAuth2** is recommended for production environments, especially if you are using Liferay SaaS, as basic authentication is disabled by default.
+**OAuth2**は、特にLiferay SaaSを使用している場合、基本認証がデフォルトで無効になっているため、本番環境に推奨されます。
 
-You will need to enable the following scopes to use the **openai-demo-wizard**:
+**openai-demo-wizard**を使用するには、以下のスコープを有効にする必要があります：
 
 - Liferay.Headless.Admin.Taxonomy.everything
 - Liferay.Headless.Admin.User.everything
@@ -70,48 +70,48 @@ You will need to enable the following scopes to use the **openai-demo-wizard**:
 - Liferay.Headless.Site.everything
 
 
-## Setup
+## セットアップ
 
-1. If you don’t have Node.js installed, [install it from here](https://nodejs.org/en/)
+1. Node.jsがインストールされていない場合は、[ここからインストールしてください](https://nodejs.org/en/)
 
-1. Clone this repository
+2. このリポジトリをクローンします
 
-1. Navigate into the project directory
+3. プロジェクトディレクトリに移動します
 
 ```bash
 cd liferay-openai-demo-wizard
 ```  
 
-1. Install the requirements
+4. 必要なパッケージをインストールします
 
 ```bash
 npm install
 ```
 
-1. Run the app
+5. アプリを実行します
 
 ```bash
 npm run dev
 ```
 
-You should now be able to access the app at [http://localhost:3000](http://localhost:3000). 
+これで、[http://localhost:3000](http://localhost:3000)でアプリにアクセスできるはずです。
 
 > [!TIP]
-> If you are accessing a local Liferay instance through localhost and have issues with getting the configuration to connect, using "https://127.0.0.1:8080" might solve the connection issue. Some nodejs or axios versions have known issues for calling localhost.
+> localhostを通じてローカルLiferayインスタンスにアクセスしていて、設定の接続に問題がある場合は、"https://127.0.0.1:8080"を使用すると接続の問題が解決する可能性があります。一部のnodejsやaxiosバージョンでは、localhostの呼び出しに既知の問題があります。
 
-## Deployment
+## デプロイメント
 
-Configuration for the application is now done through the UI. Use the gear icon in the lower right of the screen to set your environment properties.
+アプリケーションの設定は現在UIを通じて行われます。画面右下の歯車アイコンを使用して環境プロパティを設定してください。
 
 ---
 
 > [!WARNING]
-> Never use personal information, passwords, or sensitive data for generative AI prompts.
+> 生成AIプロンプトに個人情報、パスワード、機密データを絶対に使用しないでください。
 
 > [!IMPORTANT]
-> This is a personal project not directly supported by Liferay Inc.
+> これはLiferay Inc.が直接サポートしていない個人プロジェクトです。
 
 > [!TIP]
-> Your feedback and suggestions are useful to us. Please share your ideas for improvements!
+> あなたのフィードバックと提案は私たちにとって有用です。改善のためのアイデアを共有してください！
 
-# Let's build great things!
+# 素晴らしいものを作りましょう！
