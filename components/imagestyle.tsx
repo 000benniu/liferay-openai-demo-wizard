@@ -1,7 +1,7 @@
 import { BookOpenIcon, XCircleIcon } from '@heroicons/react/24/solid';
 import { useEffect, useState } from 'react';
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
 
 export default function AppImageStyle({ styleInputChange }) {
   const [showModal, setShowModal] = useState(false);
