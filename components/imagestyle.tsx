@@ -1,6 +1,7 @@
 import { BookOpenIcon, XCircleIcon } from '@heroicons/react/24/solid';
 import { useEffect, useState } from 'react';
 import React from 'react';
+import Image from 'next/image';
 
 export default function AppImageStyle({ styleInputChange }) {
   const [showModal, setShowModal] = useState(false);
@@ -88,7 +89,7 @@ export default function AppImageStyle({ styleInputChange }) {
                               setStyleChoice(formatStyleName(value))
                             }
                           >
-                            <img
+                            <Image
                               className='border-2 border-blue-300 hover:border-blue-600 cursor-pointer shadow-md'
                               src={'/images/art-styles/' + value}
                             />

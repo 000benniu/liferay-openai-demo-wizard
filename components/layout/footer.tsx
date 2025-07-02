@@ -62,6 +62,13 @@ export default function AppFooter() {
     setEnvMsg('設定を検証中...');
     checkConfig(newConfig);
   };
+  
+  const checkConfig = async (appConfig) => {
+    console.log({ appConfig });
+    const { data } = await nextAxios.post('/api/env', appConfig);
+
+    setEnv(data);
+  };
 
   useEffect(() => {
     if (cookies.get(APP_CONFIG)) {
@@ -74,14 +81,9 @@ export default function AppFooter() {
     } else {
       checkConfig(appConfig);
     }
-  }, []);
+  }, [appConfig, checkConfig]);
 
-  const checkConfig = async (appConfig) => {
-    console.log({ appConfig });
-    const { data } = await nextAxios.post('/api/env', appConfig);
 
-    setEnv(data);
-  };
 
   return (
     <>
