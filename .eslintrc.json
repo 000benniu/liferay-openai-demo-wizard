@@ -10,6 +10,7 @@
       {
         "type": "natural"
       }
-    ]
+    ],
+    "perfectionist/sort-imports": "warn"
   }
 }
