@@ -86,7 +86,7 @@ export default function Images() {
     return {
       dalliOptions,
       showImageStyle,
-      submitLabel: 'Generate Images - Estimated cost: ' + cost,
+      submitLabel: '画像を生成 - 推定コスト: ' + cost,
     };
   }, [
     imageGeneration,
@@ -105,8 +105,8 @@ export default function Images() {
 
   return (
     <Layout
-      description="Type your topic in the field below and wait for your images."
-      title="Liferay Image Generator"
+      description="以下のフィールドにトピックを入力して画像をお待ちください。"
+      title="Liferay画像生成器"
     >
       <Form
         formProviderProps={imageForm}
@@ -114,37 +114,37 @@ export default function Images() {
       >
         <div className="w-700 grid grid-cols-1 gap-2 sm:grid-cols-1 md:gap-4 mb-5">
           <Input
-            label="Enter an Image Description"
+            label="画像説明を入力してください"
             name="imageDescription"
-            placeholder="Provide a detailed description of the image(s) you want to generate."
+            placeholder="生成したい画像の詳細な説明を入力してください。"
           />
         </div>
 
         <div className="w-700 grid grid-cols-2 gap-2 sm:grid-cols-2 md:gap-4 mb-5">
           <Input
-            label="Number of Images to Generate (Max 10)"
+            label="生成する画像数（最大10）"
             name="imageNumber"
-            placeholder="Number of images"
+            placeholder="画像数"
           />
 
           <Input
-            label="Image Folder ID"
+            label="画像フォルダID"
             name="imageFolderId"
-            placeholder="Enter a Document Library Folder ID"
+            placeholder="ドキュメントライブラリフォルダIDを入力してください"
           />
 
           <Select
-            label="Image Generation"
+            label="画像生成"
             name="imageGeneration"
             optionMap={[
-              { id: 'none', name: 'None' },
-              { id: 'dall-e-3', name: 'DALL·E 3 (Highest-Quality Images)' },
-              { id: 'dall-e-2', name: 'DALL·E 2 (Basic Images)' },
+              { id: 'none', name: 'なし' },
+              { id: 'dall-e-3', name: 'DALL·E 3（最高品質の画像）' },
+              { id: 'dall-e-2', name: 'DALL·E 2（基本画像）' },
             ]}
           />
 
           <Select
-            label="Image Size"
+            label="画像サイズ"
             name="imageGenerationSize"
             optionMap={dalliOptions}
           />

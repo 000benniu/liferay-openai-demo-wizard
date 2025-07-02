@@ -1,7 +1,7 @@
 export default function LoadingAnimation() {
   return (
     <div>
-      <p className='text-slate-200'>Generating content... be patient.. </p>
+      <p className='text-slate-200'>コンテンツを生成中...しばらくお待ちください...</p>
 
       <div role='status'>
         <svg
@@ -20,7 +20,7 @@ export default function LoadingAnimation() {
             fill='currentFill'
           />
         </svg>
-        <span className='sr-only'>Loading...</span>
+        <span className='sr-only'>読み込み中...</span>
       </div>
     </div>
   );

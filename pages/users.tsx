@@ -4,20 +4,20 @@ import NavItem from '../components/navitem';
 export default function Users() {
   return (
     <Layout
-      description='How would you like to add users?'
-      title='Liferay User Generator'
+      description='ユーザーをどのように追加しますか？'
+      title='Liferayユーザー生成器'
     >
       <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8'>
         <NavItem
-          description='Use OpenAI to generate a list of random demo users.'
+          description='OpenAIを使用してランダムなデモユーザーのリストを生成します。'
           path='/users-ai'
-          title='AI Generation'
+          title='AI生成'
         />
 
         <NavItem
-          description='Upload a list of specific users from a CSV file.'
+          description='CSVファイルから特定のユーザーのリストをアップロードします。'
           path='/users-file'
-          title='File Upload'
+          title='ファイルアップロード'
         />
       </div>
     </Layout>

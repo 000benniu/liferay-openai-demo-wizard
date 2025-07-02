@@ -6,86 +6,86 @@ import NavItem from '../components/navitem';
 
 const navItems = [
   {
-    description: 'Create a list of accounts based on a company type.',
+    description: '会社タイプに基づいてアカウントのリストを作成します。',
     path: '/accounts',
-    title: 'Accounts',
+    title: 'アカウント',
   },
   {
-    description: 'Create a set of blogs based on a prompt.',
+    description: 'プロンプトに基づいてブログのセットを作成します。',
     path: '/blogs',
-    title: 'Blogs',
+    title: 'ブログ',
   },
   {
-    description: 'Create a taxonomy and category structure based on a theme.',
+    description: 'テーマに基づいてタクソノミーとカテゴリ構造を作成します。',
     path: '/categories',
-    title: 'Categories',
+    title: 'カテゴリ',
   },
   {
-    description: 'Create a set of multilingual FAQs based on a topic.',
+    description: 'トピックに基づいて多言語FAQのセットを作成します。',
     path: '/faqs',
-    title: 'FAQs',
+    title: 'FAQ',
   },
   {
     description:
-      'Generate images into a document library folder based on a prompt.',
+      'プロンプトに基づいてドキュメントライブラリフォルダに画像を生成します。',
     path: '/images',
-    title: 'Images',
+    title: '画像',
   },
   {
-    description: 'Create knowledge base folders and articles based on a topic.',
+    description: 'トピックに基づいてナレッジベースフォルダと記事を作成します。',
     path: '/knowledgebase',
-    title: 'Knowledge Base',
+    title: 'ナレッジベース',
   },
   {
-    description: 'Choose a topic to create message board sections and threads.',
+    description: 'トピックを選択してメッセージボードセクションとスレッドを作成します。',
     path: '/messageboard',
-    title: 'Message Boards',
+    title: 'メッセージボード',
   },
   {
-    description: 'Create a set of multilingual news articles based on a topic.',
+    description: 'トピックに基づいて多言語ニュース記事のセットを作成します。',
     path: '/news',
-    title: 'News',
+    title: 'ニュース',
   },
   {
-    description: 'Populate a custom object with records based on a prompt.',
+    description: 'プロンプトに基づいてカスタムオブジェクトにレコードを追加します。',
     path: '/objects',
-    title: 'Objects',
+    title: 'オブジェクト',
   },
   {
-    description: 'Create an organizational structure for a company.',
+    description: '会社の組織構造を作成します。',
     path: '/organizations',
-    title: 'Organizations',
+    title: '組織',
   },
   {
     description:
-      'Generate a page hierarchy from a description of the goal of a site.',
+      'サイトの目標の説明からページ階層を生成します。',
     path: '/pages',
-    title: 'Page Hierarchies',
+    title: 'ページ階層',
   },
   {
-    description: 'Use a company theme to generate products and categories.',
+    description: '会社テーマを使用して製品とカテゴリを生成します。',
     path: '/products',
-    title: 'Products',
+    title: '製品',
   },
   {
-    description: 'Create example users for a portal instance.',
+    description: 'ポータルインスタンスのサンプルユーザーを作成します。',
     path: '/users',
-    title: 'Users',
+    title: 'ユーザー',
   },
   {
-    description: 'Create example user groups for a portal instance.',
+    description: 'ポータルインスタンスのサンプルユーザーグループを作成します。',
     path: '/usergroups',
-    title: 'User Groups',
+    title: 'ユーザーグループ',
   },
   {
-    description: 'Create a set of warehouses in a given region.',
+    description: '指定された地域に倉庫のセットを作成します。',
     path: '/warehouses',
-    title: 'Warehouses',
+    title: '倉庫',
   },
   {
-    description: 'Create a set of wiki nodes and pages based on a prompt.',
+    description: 'プロンプトに基づいてWikiノードとページのセットを作成します。',
     path: '/wikis',
-    title: 'Wikis',
+    title: 'Wiki',
   },
 ];
 
@@ -98,7 +98,7 @@ const HomePage = () => {
         <div className="container flex flex-col items-center justify-center gap-12 px-4 pt-6 pb-20">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-[4rem]">
             Liferay <span className="text-[hsl(210,70%,50%)]">OpenAI</span>{' '}
-            Content Wizard
+            コンテンツウィザード
             <RocketLaunchIcon className="inline pl-3 h-20 w-20 relative bottom-2 text-[hsl(210,50%,80%)]" />
           </h1>
 

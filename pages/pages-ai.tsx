@@ -21,7 +21,7 @@ export default function PagesAI() {
       addPageContent: true,
       childPageNumber: '3',
       pageNumber: '8',
-      pageTopic: 'Company Intranet Portal',
+      pageTopic: '会社のイントラネットポータル',
     },
     resolver: zodResolver(schema.pagesAI),
   });
@@ -45,8 +45,8 @@ export default function PagesAI() {
 
   return (
     <Layout
-      description='Type your business description in the field below and wait for your pages. Examples of site descriptions are "automotive supplier portal", "college student portal", or "botanical hobbyist site".'
-      title="Liferay Page Generator"
+      description='下記のフィールドにビジネス説明を入力してページをお待ちください。サイト説明の例は「自動車サプライヤーポータル」「大学生ポータル」「植物愛好家サイト」などです。'
+      title="Liferayページ生成器"
     >
       <Form
         formProviderProps={pagesAIForm}
@@ -54,46 +54,44 @@ export default function PagesAI() {
       >
         <div className="w-700 grid grid-cols-2 gap-2 sm:grid-cols-2 md:gap-4 mb-5">
           <Input
-            label="Site Description"
+            label="サイト説明"
             name="pageTopic"
-            placeholder="Enter a site description"
+            placeholder="サイト説明を入力してください"
           />
 
           <Input
-            label="Site ID"
+            label="サイトID"
             name="siteId"
-            placeholder="Enter id of the site that you would like to add pages to"
+            placeholder="ページを追加したいサイトのIDを入力してください"
           />
 
           <Input
-            label="Maximum Number of Pages"
+            label="最大ページ数"
             name="pageNumber"
-            placeholder="Enter a the max number of top level pages to generate"
+            placeholder="生成するトップレベルページの最大数を入力してください"
           />
 
           <Input
-            label="Maximum Number of Child Pages"
+            label="最大子ページ数"
             name="childPageNumber"
-            placeholder="Enter a the max number of child pages to generate"
+            placeholder="生成する子ページの最大数を入力してください"
           />
 
           <FieldToggle
             defaultValue={true}
             fieldKey="addContent"
             inputChange={() => setValue('addPageContent', !addPageContent)}
-            name="Generate Page Content (EARLY RELEASE, increases content generation time)"
+            name="ページコンテンツを生成（早期リリース、コンテンツ生成時間が増加します）"
           />
         </div>
 
         <FieldSubmit 
           disabled={!pagesAIForm.formState.isValid || isSubmitting}
-          label="Generate Pages" />
+          label="ページを生成" />
       </Form>
 
       <p className="text-slate-100 text-center text-lg mb-3 rounded p-5 bg-white/10 w-1/2 italic">
-        <b>Note:</b> The AI generation of page lists was not dependable for GPT
-        3.5. Because of this, GPT 4.0 is automatically enforced for generating a
-        complete page structure. Subsequent calls will use the selected model.
+        <b>注意:</b> GPT 3.5でのページリスト生成は信頼できませんでした。そのため、完全なページ構造を生成するためにGPT 4.0が自動的に使用されます。後続の呼び出しでは選択されたモデルが使用されます。
       </p>
 
       {isSubmitting ? (

@@ -67,7 +67,7 @@ export default function Products() {
 
     return {
       showImageStyle,
-      submitLabel: 'Generate Products - Estimated cost: ' + cost,
+      submitLabel: '製品を生成 - 推定コスト: ' + cost,
     };
   }, [imageGeneration, numberOfCategories, numberOfProducts]);
 
@@ -80,8 +80,8 @@ export default function Products() {
 
   return (
     <Layout
-      description='This is an Open AI integration to generate demo products. Examples of the commerce theme are "home energy saving products", "electric vehicles", or "bird feeders and supplies"'
-      title="Liferay Product Generator"
+      description='これはデモ製品を生成するためのOpenAI統合です。コマーステーマの例は「家庭用省エネ製品」、「電気自動車」、「鳥の餌台と用品」などです'
+      title="Liferay製品生成器"
     >
       <Form
         formProviderProps={productForm}
@@ -89,49 +89,49 @@ export default function Products() {
       >
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 mb-5">
           <Input
-            label="Commerce Theme"
+            label="コマーステーマ"
             name="companyTheme"
-            placeholder="Enter a commerce theme"
+            placeholder="コマーステーマを入力してください"
           />
 
           <Input
-            label="Vocabulary Name"
+            label="語彙名"
             name="vocabularyName"
-            placeholder="Enter a vocabulary name"
+            placeholder="語彙名を入力してください"
           />
 
           <Input
-            label="Global Site ID for Taxonomy"
+            label="タクソノミーのグローバルサイトID"
             name="globalSiteId"
-            placeholder="Enter the global site ID"
+            placeholder="グローバルサイトIDを入力してください"
           />
 
           <Input
-            label="Number of Categories"
+            label="カテゴリ数"
             name="numberOfCategories"
-            placeholder="Enter the number of categories"
+            placeholder="カテゴリ数を入力してください"
           />
 
           <Input
-            label="Number of Products per Category"
+            label="カテゴリあたりの製品数"
             name="numberOfProducts"
-            placeholder="Enter the number of products per category"
+            placeholder="カテゴリあたりの製品数を入力してください"
           />
 
           <Select
             defaultOption
-            label="Product Catalog ID"
+            label="製品カタログID"
             name="catalogId"
             optionMap={catalogs}
           />
 
           <Select
-            label="Image Generation"
+            label="画像生成"
             name="imageGeneration"
             optionMap={[
-              { id: 'none', name: 'None' },
-              { id: 'dall-e-3', name: 'DALL·E 3 (Highest-Quality Images)' },
-              { id: 'dall-e-2', name: 'DALL·E 2 (Basic Images)' },
+              { id: 'none', name: 'なし' },
+              { id: 'dall-e-3', name: 'DALL·E 3（最高品質の画像）' },
+              { id: 'dall-e-2', name: 'DALL·E 2（基本画像）' },
             ]}
           />
 

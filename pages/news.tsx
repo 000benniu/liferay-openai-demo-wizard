@@ -80,7 +80,7 @@ export default function News() {
     return {
       showImageFolder,
       showImageStyle,
-      submitLabel: 'Generate News - Estimated cost: ' + cost,
+      submitLabel: 'ニュースを生成 - 推定コスト: ' + cost,
     };
   }, [newsNumber, imageGeneration]);
 
@@ -94,13 +94,13 @@ export default function News() {
 
   return (
     <Layout
-      description='Type your topic in the field below and wait for your News. Examples of news topics are "technological advancements in healthcare", "new years resolutions", or "successful leadership approaches and goals".'
-      title="Liferay News Generator"
+      description='以下のフィールドにトピックを入力してニュースをお待ちください。ニューストピックの例は「医療における技術的進歩」、「新年の抱負」、「成功するリーダーシップアプローチと目標」などです。'
+      title="Liferayニュース生成器"
     >
       <div className="fixed top-2 right-5 text-lg download-options p-5 rounded">
-        <TopNavItem label="News Structure" onClick={handleStructureClick} />
+        <TopNavItem label="ニュース構造" onClick={handleStructureClick} />
 
-        <TopNavItem label="News Fragment" onClick={handleFragmentClick} />
+        <TopNavItem label="ニュースフラグメント" onClick={handleFragmentClick} />
       </div>
 
       <Form
@@ -109,68 +109,68 @@ export default function News() {
       >
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:gap-4 mb-5">
           <Input
-            label="News Topic"
+            label="ニューストピック"
             name="newsTopic"
-            placeholder="Enter a News topic"
+            placeholder="ニューストピックを入力してください"
           />
 
           <Input
-            label="Number of Articles to Create (Max 10)"
+            label="作成する記事数（最大10）"
             name="newsNumber"
-            placeholder="Number of News posts"
+            placeholder="ニュース投稿数"
           />
 
           <Input
-            label="Expected News Post Length (in # of words)"
+            label="期待されるニュース投稿の長さ（単語数）"
             name="newsLength"
-            placeholder="Expected News Post Length"
+            placeholder="期待されるニュース投稿の長さ"
           />
 
           <Input
-            label="Site ID or Asset Library Group ID"
+            label="サイトIDまたはアセットライブラリグループID"
             name="siteId"
-            placeholder="Enter a site ID or asset library group ID"
+            placeholder="サイトIDまたはアセットライブラリグループIDを入力してください"
           />
 
           <Input
-            label="Web Content Folder ID (0 for Root)"
+            label="WebコンテンツフォルダID（ルートの場合は0）"
             name="folderId"
-            placeholder="Enter a Web Content Folder ID"
+            placeholder="WebコンテンツフォルダIDを入力してください"
           />
 
           <Input
-            label="Structure ID"
+            label="構造ID"
             name="structureId"
-            placeholder="Enter a Structure ID"
+            placeholder="構造IDを入力してください"
           />
 
           <Input
-            label="Comma-Delimited Category IDs (Optional)"
+            label="カンマ区切りカテゴリID（オプション）"
             name="categoryIds"
-            placeholder="List of Comma-Delimited Category IDs"
+            placeholder="カンマ区切りのカテゴリIDリスト"
           />
 
           <Select
-            label="View Options"
+            label="表示オプション"
             name="viewOptions"
             optionMap={viewOptions}
           />
 
           <Select
-            label="Image Generation"
+            label="画像生成"
             name="imageGeneration"
             optionMap={[
-              { id: 'none', name: 'None' },
-              { id: 'dall-e-3', name: 'DALL·E 3 (Highest-Quality Images)' },
-              { id: 'dall-e-2', name: 'DALL·E 2 (Basic Images)' },
+              { id: 'none', name: 'なし' },
+              { id: 'dall-e-3', name: 'DALL·E 3（最高品質の画像）' },
+              { id: 'dall-e-2', name: 'DALL·E 2（基本画像）' },
             ]}
           />
 
           {showImageFolder && (
             <Input
-              label="Image Folder ID (0 for Doc Lib Root)"
+              label="画像フォルダID（ドキュメントライブラリルートの場合は0）"
               name="imageFolderId"
-              placeholder="Enter a Document Library Folder ID"
+              placeholder="ドキュメントライブラリフォルダIDを入力してください"
             />
           )}
 
@@ -199,9 +199,8 @@ export default function News() {
       </Form>
 
       <p className="text-slate-100 text-center text-lg mb-3 rounded p-5 bg-white/10 w-1/2 italic">
-        <b>Note:</b> News Article generation requires a specific content
-        structure. <br />
-        Please use the supplied News Structure supplied above.
+        <b>注意:</b> ニュース記事生成には特定のコンテンツ構造が必要です。 <br />
+        上記で提供されているニュース構造を使用してください。
       </p>
 
       {isSubmitting ? (

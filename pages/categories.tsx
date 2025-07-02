@@ -25,8 +25,8 @@ export default function Categories() {
       defaultLanguage: 'en-US',
       languages: [],
       manageLanguage: false,
-      vocabularyDescription: 'Various categories of books',
-      vocabularyName: 'Books types',
+      vocabularyDescription: '様々な本のカテゴリ',
+      vocabularyName: '本の種類',
     },
     resolver: zodResolver(schema.category),
   });
@@ -45,8 +45,8 @@ export default function Categories() {
 
   return (
     <Layout
-      description={`Type your business description in the field below and wait for your categories. Examples of vocabulary themes are "various categories of books", "types of healthcare services", or "options for home furniture".`}
-      title="Liferay Category Generator"
+      description={`以下のフィールドにビジネス説明を入力してカテゴリをお待ちください。語彙テーマの例は「様々な本のカテゴリ」、「ヘルスケアサービスの種類」、「家庭用家具のオプション」などです。`}
+      title="Liferayカテゴリ生成器"
     >
       <Form
         formProviderProps={categoriesForm}
@@ -54,33 +54,33 @@ export default function Categories() {
       >
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:gap-4 mb-5">
           <Input
-            label="Vocabulary Theme"
+            label="語彙テーマ"
             name="vocabularyDescription"
-            placeholder="Enter a vocabulary description"
+            placeholder="語彙の説明を入力してください"
           />
 
           <Input
-            label="Vocabulary Name"
+            label="語彙名"
             name="vocabularyName"
-            placeholder="Enter a vocabulary name"
+            placeholder="語彙名を入力してください"
           />
 
           <Input
-            label="Site ID or Asset Library Group ID"
+            label="サイトIDまたはアセットライブラリグループID"
             name="siteId"
-            placeholder="Enter a site ID or asset library group ID"
+            placeholder="サイトIDまたはアセットライブラリグループIDを入力してください"
           />
 
           <Input
-            label="Number of Categories"
+            label="カテゴリ数"
             name="categorytNumber"
-            placeholder="Enter a the number of categories to generate"
+            placeholder="生成するカテゴリ数を入力してください"
           />
 
           <Input
-            label="Number of Child Categories"
+            label="子カテゴリ数"
             name="childCategorytNumber"
-            placeholder="Enter a the number of child categories to generate"
+            placeholder="生成する子カテゴリ数を入力してください"
           />
         </div>
 
@@ -98,7 +98,7 @@ export default function Categories() {
 
         <FieldSubmit 
           disabled={!categoriesForm.formState.isValid || isSubmitting}
-          label="Generate Categories" />
+          label="カテゴリを生成" />
       </Form>
 
       {isSubmitting ? (

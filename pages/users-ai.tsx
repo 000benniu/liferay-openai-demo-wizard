@@ -40,8 +40,8 @@ export default function UsersAI() {
 
   return (
     <Layout
-      description="Use the form below to create users."
-      title="Liferay User Generator"
+      description="以下のフォームを使用してユーザーを作成します。"
+      title="Liferayユーザー生成器"
     >
       <Form
         formProviderProps={usersAIForm}
@@ -49,19 +49,19 @@ export default function UsersAI() {
       >
         <div className="w-500 grid grid-cols-1 gap-2 sm:grid-cols-2 md:gap-4 mb-5">
           <Input
-            label="Number of Users to Create"
+            label="作成するユーザー数"
             name="userNumber"
-            placeholder="Number of users"
+            placeholder="ユーザー数"
           />
 
           <Input
-            label="Email Domain (example.com)"
+            label="メールドメイン (example.com)"
             name="emailPrefix"
             placeholder="liferay.xyz"
           />
 
           <Input
-            label="User Default Password"
+            label="ユーザーデフォルトパスワード"
             name="password"
             placeholder="password"
           />
@@ -69,7 +69,7 @@ export default function UsersAI() {
 
         <FieldSubmit 
           disabled={!usersAIForm.formState.isValid || isSubmitting}
-          label="Generate Users" />
+          label="ユーザーを生成" />
       </Form>
 
       {isSubmitting ? (

@@ -18,9 +18,9 @@ export default function Objects() {
   const objectsForm = useForm<ObjectsSchema>({
     defaultValues: {
       aiEndpoint: '/o/c/exampleobjects/batch',
-      aiRequest: 'Provide a list of 10 countries in Europe',
+      aiRequest: '日本の都道府県のリストを10個提供してください',
       aiRole:
-        'You are a helpful assistant responsible for providing a list of answers',
+        '回答リストを提供する責任を持つ、有能で役に立つアシスタントです。',
       objectFields: [
         { fieldDescription: '', fieldName: '', fieldType: 'string' },
       ],
@@ -80,8 +80,8 @@ export default function Objects() {
 
   return (
     <Layout
-      description="Complete the prompts below and describe your object to create the object data."
-      title="Liferay Object Data Generator"
+      description="下記のプロンプトを入力し、オブジェクトデータを生成してください。"
+      title="Liferayオブジェクトデータ生成器"
     >
       <Form
         className="mb-6"
@@ -90,27 +90,27 @@ export default function Objects() {
       >
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-1 mb-5">
           <Input
-            label="The role the AI generator should act as"
+            label="AI生成器の役割"
             name="aiRole"
-            placeholder="Enter the AI role here"
+            placeholder="AIの役割を入力してください"
           />
 
           <Input
-            label="Specific request to OpenAI"
+            label="OpenAIへの具体的なリクエスト"
             name="aiRequest"
-            placeholder="Enter your specific request to OpenAI"
+            placeholder="OpenAIへのリクエストを入力してください"
           />
 
           <Input
-            label="Location of your object's batch endpoint (Example /o/c/exampleobjects/batch)"
+            label="オブジェクトのバッチエンドポイント"
             name="aiEndpoint"
-            placeholder="Enter an object's batch endpoint"
+            placeholder="バッチエンドポイントを入力してください"
           />
         </div>
 
         <div className="bg-white/10 rounded p-3 mb-5">
           <h4 className="text-slate-200 font-bold mb-3">
-            Describe your object structure
+            オブジェクト構造の説明
           </h4>
 
           {fields.map((_, index) => (
@@ -119,21 +119,21 @@ export default function Objects() {
               key={index}
             >
               <Input
-                label="Object Field Key Name"
+                label="オブジェクトフィールド名"
                 name={`objectFields.${index}.fieldName`}
-                placeholder="Enter a object field name"
+                placeholder="オブジェクトフィールド名を入力してください"
               />
 
               <Input
-                label="Content Description"
+                label="内容の説明"
                 name={`objectFields.${index}.fieldDescription`}
-                placeholder="Example: Country Name"
+                placeholder="例: 国名"
               />
 
               <Select
-                label="Field Type"
+                label="フィールドタイプ"
                 name={`objectFields.${index}.fieldType`}
-                optionMap={[{ id: 'string', name: 'String' }]}
+                optionMap={[{ id: 'string', name: '文字列' }]}
               />
             </div>
           ))}
@@ -143,21 +143,21 @@ export default function Objects() {
               className="text-sm pl-4 pr-4 rounded mt-6 disabled:bg-blue-800 bg-blue-400 font-semibold h-7 text-white disabled:text-slate-400"
               onClick={addField}
             >
-              Add Field
+              フィールドを追加
             </button>
             <button
               className="text-sm pl-4 pr-4 rounded mt-6 disabled:bg-blue-800 bg-blue-400 font-semiboldh-7 text-white disabled:text-slate-400"
               disabled={objectFields.length <= 1}
               onClick={() => removeField(objectFields.length - 1)}
             >
-              Remove Last Field
+              最後のフィールドを削除
             </button>
           </div>
         </div>
 
         <FieldSubmit 
           disabled={!objectsForm.formState.isValid || isSubmitting}
-          label="Generate Object Data" />
+          label="オブジェクトデータを生成" />
       </Form>
 
       {isSubmitting ? (

@@ -10,7 +10,7 @@ import Input from './forms/input';
 import Select from './forms/select';
 
 const authenticationTypes = [
-  { id: 'basic', name: 'Basic Authentication' },
+  { id: 'basic', name: '基本認証' },
   { id: 'oauth', name: 'OAuth2' },
 ];
 
@@ -38,7 +38,7 @@ export default function ConfigModal({
           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
               <h3 className="text-3xl font-semibold mr-6">
-                AI Content Wizard Configuration
+                AIコンテンツウィザード設定
               </h3>
               <XCircleIcon
                 className="h-8 w-8 fill-blue-500 cursor-pointer"
@@ -51,13 +51,13 @@ export default function ConfigModal({
                 <div className="mb-2 p-2 bg-blue-500/20 rounded-lg font-normal">
                   <div className="mb-1">
                     <Input
-                      label="OpenAI Key"
+                      label="OpenAIキー"
                       name="openAIKey"
-                      placeholder="Enter an openai key"
+                      placeholder="OpenAIキーを入力してください"
                     />
 
                     <Select
-                      label="AI Model"
+                      label="AIモデル"
                       name="model"
                       optionMap={aiModelOptions}
                     />
@@ -69,15 +69,15 @@ export default function ConfigModal({
                         href="https://platform.openai.com/docs/models/overview"
                         target="_new"
                       >
-                        Models
+                        モデル
                       </a>{' '}
-                      and{' '}
+                      と{' '}
                       <a
                         className="text-sky-500"
                         href="https://openai.com/pricing"
                         target="_new"
                       >
-                        Pricing
+                        料金
                       </a>
                     </p>
                   </div>
@@ -85,15 +85,15 @@ export default function ConfigModal({
 
                 <div className="p-2 mb-2 bg-green-600/20 rounded-lg">
                   <Input
-                    label="Set Server URL"
+                    label="サーバーURLを設定"
                     name="serverURL"
-                    placeholder="Enter server url"
+                    placeholder="サーバーURLを入力してください"
                   />
                 </div>
 
                 <div className="mb-2 p-2 bg-blue-600/20 rounded-lg">
                   <Select
-                    label="Select Authentication Type"
+                    label="認証タイプを選択"
                     name="authenticationType"
                     optionMap={authenticationTypes}
                   />
@@ -103,15 +103,15 @@ export default function ConfigModal({
                   <div>
                     <div className="mb-2 p-2 bg-blue-600/30 rounded-lg">
                       <Input
-                        label="User Login"
+                        label="ユーザーログイン"
                         name="login"
-                        placeholder="Enter user login"
+                        placeholder="ユーザーログインを入力してください"
                       />
 
                       <Input
-                        label="Password"
+                        label="パスワード"
                         name="password"
-                        placeholder="Enter password (Password is never saved directly)"
+                        placeholder="パスワードを入力してください（パスワードは直接保存されません）"
                         type="password"
                       />
                     </div>
@@ -122,15 +122,15 @@ export default function ConfigModal({
                   <div>
                     <div className="mb-2 p-2 bg-blue-600/30 rounded-lg">
                       <Input
-                        label="OAuth2 - Client ID"
+                        label="OAuth2 - クライアントID"
                         name="clientId"
-                        placeholder="Enter Client ID (Secrets are never saved directly)"
+                        placeholder="クライアントIDを入力してください（シークレットは直接保存されません）"
                       />
 
                       <Input
-                        label="OAuth2 - Client Secret"
+                        label="OAuth2 - クライアントシークレット"
                         name="clientSecret"
-                        placeholder="Enter Client Secret (Secrets are never saved directly)"
+                        placeholder="クライアントシークレットを入力してください（シークレットは直接保存されません）"
                       />
                     </div>
                   </div>
@@ -143,7 +143,7 @@ export default function ConfigModal({
                 className="bg-blue-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="submit"
               >
-                Save Configuration
+                設定を保存
               </button>
             </div>
           </div>

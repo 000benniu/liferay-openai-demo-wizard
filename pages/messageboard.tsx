@@ -47,8 +47,8 @@ export default function MessageBoard() {
 
   return (
     <Layout
-      description='Type your topic in the field below and wait for your Message Board Threads. Examples of message board topics are "healthy living", "travel advice and tips", or "running a successful dog grooming business".'
-      title="Liferay Message Board Content Generator"
+      description='下記のフィールドにトピックを入力し、メッセージボードスレッドを生成してください。例:「健康的な生活」「旅行のアドバイス」「ドッググルーミングビジネス」'
+      title="Liferayメッセージボード生成器"
     >
       <Form
         formProviderProps={messageBoardForm}
@@ -56,45 +56,45 @@ export default function MessageBoard() {
       >
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:gap-4 mb-5">
           <Input
-            label="Message Board Topic"
+            label="メッセージボードトピック"
             name="mbTopic"
-            placeholder="Enter a message board topic"
+            placeholder="メッセージボードトピックを入力してください"
           />
 
           <Input label="Site ID" name="siteId" placeholder="Enter a site ID" />
 
           <Input
-            label="Expected Thread Length (in # of words)"
+            label="スレッドの想定文字数"
             name="mbThreadLength"
-            placeholder="Enter a message board thread length"
+            placeholder="スレッドの想定文字数を入力してください"
           />
 
           <Input
-            label="Number of Sections to Create"
+            label="セクション数"
             name="mbSectionNumber"
-            placeholder="Number of message board sections"
+            placeholder="生成するセクション数を入力してください"
           />
 
           <Input
-            label="Number of Threads to Create per Section"
+            label="各セクションのスレッド数"
             name="mbThreadNumber"
-            placeholder="Message board threads per section"
+            placeholder="各セクションのスレッド数を入力してください"
           />
 
           <Input
-            label="Number of Messages to Create per Thread"
+            label="各スレッドのメッセージ数"
             name="mbMessageNumber"
-            placeholder="Message board messages per thread"
+            placeholder="各スレッドのメッセージ数を入力してください"
           />
 
           <Select
-            label="Message Board Language"
+            label="メッセージボード言語"
             name="mbLanguage"
             optionMap={languageOptions}
           />
 
           <Select
-            label="View Options"
+            label="表示オプション"
             name="viewOptions"
             optionMap={viewOptions}
           />
@@ -102,7 +102,7 @@ export default function MessageBoard() {
 
         <FieldSubmit 
           disabled={!messageBoardForm.formState.isValid || isSubmitting}
-          label={'Generate Message Board Threads'}
+          label={'メッセージボードスレッドを生成'}
         />
       </Form>
 

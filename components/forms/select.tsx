@@ -22,7 +22,7 @@ export default function Select({
         name={name}
         {...register(name)}
       >
-        {defaultOption && <option value="">Select...</option>}
+        {defaultOption && <option value="">選択してください...</option>}
 
         {optionMap.map((option) => {
           return (

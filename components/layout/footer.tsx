@@ -21,7 +21,7 @@ const getBase64data = (login: string, password: string) => {
 };
 
 export default function AppFooter() {
-  const [envMsg, setEnvMsg] = useState('Loading...');
+  const [envMsg, setEnvMsg] = useState('読み込み中...');
   const [envStatus, setEnvStatus] = useState('connected');
 
   const [showModal, setShowModal] = useState(false);
@@ -59,7 +59,7 @@ export default function AppFooter() {
     setShowModal(false);
 
     setEnvStatus('connected');
-    setEnvMsg('Validating config...');
+    setEnvMsg('設定を検証中...');
     checkConfig(newConfig);
   };
 

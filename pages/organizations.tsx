@@ -19,7 +19,7 @@ export default function Organizations() {
     defaultValues: {
       childOrganizationtNumber: '3',
       departmentNumber: '3',
-      organizationTopic: 'National Internet, Phone, and Cable',
+      organizationTopic: '日本のインターネット、電話、ケーブルサービス',
     },
     resolver: zodResolver(schema.organizations),
   });
@@ -40,8 +40,8 @@ export default function Organizations() {
 
   return (
     <Layout
-      description='Type your business description in the field below and wait for your organization. Examples of business descriptions are "automotive supplies", "medical equipment", or "government services".'
-      title="Liferay Organization Generator"
+      description='下記のフィールドにビジネス説明を入力し、組織を生成してください。例:「自動車用品」「医療機器」「行政サービス」'
+      title="Liferay組織生成器"
     >
       <Form
         formProviderProps={organizationsForm}
@@ -49,27 +49,27 @@ export default function Organizations() {
       >
         <div className="w-700 grid grid-cols-2 gap-2 sm:grid-cols-2 md:gap-4 mb-5">
           <Input
-            label="Business Description"
+            label="ビジネス説明"
             name="organizationTopic"
-            placeholder="Enter a business description"
+            placeholder="ビジネス説明を入力してください"
           />
 
           <Input
-            label="Number of Child Organizations"
+            label="子組織数"
             name="childOrganizationtNumber"
-            placeholder="Enter a the number of child organizations to generate"
+            placeholder="生成する子組織数を入力してください"
           />
 
           <Input
-            label="Number of Departments"
+            label="部署数"
             name="departmentNumber"
-            placeholder="Enter a the number of departments to generate"
+            placeholder="生成する部署数を入力してください"
           />
         </div>
 
         <FieldSubmit 
           disabled={!organizationsForm.formState.isValid || isSubmitting}
-          label="Generate Organization" />
+          label="組織を生成" />
       </Form>
 
       {isSubmitting ? (

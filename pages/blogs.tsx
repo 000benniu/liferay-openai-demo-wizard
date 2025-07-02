@@ -64,7 +64,7 @@ export default function Blogs() {
 
     return {
       showImageStyle,
-      submitLabel: 'Generate Blogs - Estimated cost: ' + cost,
+      submitLabel: 'ブログを生成 - 推定コスト: ' + cost,
     };
   }, [blogNumber, imageGeneration]);
 
@@ -78,8 +78,8 @@ export default function Blogs() {
 
   return (
     <Layout
-      description={`Type your topic in the field below and wait for your blogs. Examples of blog topics are "leadership skills and lessons learned", "aerospace engineering news", or "technology advancements in the medical field".`}
-      title="Liferay Blog Generator"
+      description={`以下のフィールドにトピックを入力してブログをお待ちください。ブログトピックの例は「リーダーシップスキルと学んだ教訓」、「航空宇宙工学ニュース」、「医療分野の技術進歩」などです。`}
+      title="Liferayブログ生成器"
     >
       <Form
         formProviderProps={blogsForm}
@@ -87,48 +87,48 @@ export default function Blogs() {
       >
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:gap-4 mb-5">
           <Input
-            label="Blog Topic"
+            label="ブログトピック"
             name="blogTopic"
-            placeholder="Enter a blog topic"
+            placeholder="ブログトピックを入力してください"
           />
 
           <Input
-            label="Number of Posts to Create (Max 10)"
+            label="作成する投稿数（最大10）"
             name="blogNumber"
-            placeholder="Number of blog posts"
+            placeholder="ブログ投稿数"
           />
 
           <Input
-            label="Expected Blog Post Length (in # of words)"
+            label="期待されるブログ投稿の長さ（単語数）"
             name="blogLength"
-            placeholder="Enter a the expected blog length"
+            placeholder="期待されるブログの長さを入力してください"
           />
 
           <Input
-            label="Site ID"
+            label="サイトID"
             name="siteId"
-            placeholder="Enter a site ID"
+            placeholder="サイトIDを入力してください"
           />
 
           <Select
-            label="Blog Language"
+            label="ブログ言語"
             name="blogLanguage"
             optionMap={languageOptions}
           />
 
           <Select
-            label="View Options"
+            label="表示オプション"
             name="viewOption"
             optionMap={viewOptions}
           />
 
           <Select
-            label="Image Generation"
+            label="画像生成"
             name="imageGeneration"
             optionMap={[
-              { id: 'none', name: 'None' },
-              { id: 'dall-e-3', name: 'DALL·E 3 (Highest-Quality Images)' },
-              { id: 'dall-e-2', name: 'DALL·E 2 (Basic Images)' },
+              { id: 'none', name: 'なし' },
+              { id: 'dall-e-3', name: 'DALL·E 3（最高品質の画像）' },
+              { id: 'dall-e-2', name: 'DALL·E 2（基本画像）' },
             ]}
           />
 
@@ -147,8 +147,7 @@ export default function Blogs() {
       </Form>
 
       <p className="text-slate-100 text-center text-lg mb-3 rounded p-5 bg-white/10 w-1/2 italic">
-        <b>Note:</b> The AI generation of blogs is not dependable for GPT
-        4.0. Because of this, GPT 3.5 or GPT 3.5 turbo is currently recommended.
+        <b>注意:</b> GPT 4.0ではブログのAI生成は信頼できません。そのため、現在はGPT 3.5またはGPT 3.5 turboが推奨されています。
       </p>
 
       {isSubmitting ? (

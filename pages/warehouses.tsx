@@ -18,7 +18,7 @@ export default function Warehouses() {
   const warehouseForm = useForm<WarehouseSchema>({
     defaultValues: {
       warehouseNumber: '10',
-      warehouseRegion: 'Europe',
+      warehouseRegion: '神奈川県',
     },
     resolver: zodResolver(schema.warehouse),
   });
@@ -39,8 +39,8 @@ export default function Warehouses() {
 
   return (
     <Layout
-      description="Type your region into the field below and wait for your warehouses. <br/> Example regions  are 'global', 'Midwestern United States', 'Italy and surrounding countries'."
-      title="Liferay Warehouse Generator"
+      description="下記のフィールドに地域を入力し、倉庫リストを生成してください。例:『グローバル』『アメリカ中西部』『イタリアと周辺国』"
+      title="Liferay倉庫生成器"
     >
       <Form
         formProviderProps={warehouseForm}
@@ -48,27 +48,25 @@ export default function Warehouses() {
       >
         <div className="w-700 grid grid-cols-2 gap-2 sm:grid-cols-2 md:gap-4 mb-5">
           <Input
-            label="Region for Warehouses"
+            label="倉庫の地域"
             name="warehouseRegion"
-            placeholder="Enter a region for your warehouses"
+            placeholder="倉庫の地域を入力してください"
           />
 
           <Input
-            label="Number of Warehouses"
+            label="倉庫数"
             name="warehouseNumber"
-            placeholder="Enter a the number of warehouses to generate"
+            placeholder="生成する倉庫数を入力してください"
           />
         </div>
 
         <FieldSubmit
           disabled={!warehouseForm.formState.isValid || isSubmitting}
-          label="Generate Warehouses" />
+          label="倉庫を生成" />
       </Form>
 
       <p className="text-slate-100 text-center text-lg mb-3 rounded p-5 bg-white/10 w-1/2 italic">
-        <b>Note:</b> Recently the AI generation of warehouse lists became not
-        dependable for GPT 3.5. Because of this, GPT 4.0 Turbo Preview is
-        automatically enforced.
+        <b>注意:</b> 最近、GPT 3.5での倉庫リスト生成が不安定になったため、自動的にGPT 4.0 Turbo Previewが使用されます。
       </p>
 
       {isSubmitting ? (

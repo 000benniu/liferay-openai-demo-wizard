@@ -48,8 +48,8 @@ export default function KnowledgeBase() {
 
   return (
     <Layout
-      description='Type your topic in the field below and wait for your Knowledge Base Threads. Examples of knowledge base topics are "dangerous material handling", "healthy living tips", or "creating a positive work environment".'
-      title="Liferay Knowledge Base Content Generator"
+      description='下記のフィールドにトピックを入力し、ナレッジベース記事を生成してください。例:「危険物の取り扱い」「健康的な生活のヒント」「ポジティブな職場環境の作り方」'
+      title="Liferayナレッジベース生成器"
     >
       <Form
         formProviderProps={knowledgeBaseForm}
@@ -57,39 +57,39 @@ export default function KnowledgeBase() {
       >
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:gap-4 mb-5">
           <Input
-            label="Knowledge Base Topic"
+            label="ナレッジベーストピック"
             name="kbTopic"
-            placeholder="Enter a knowledge base topic"
+            placeholder="ナレッジベーストピックを入力してください"
           />
 
           <Input label="Site ID" name="siteId" placeholder="Enter a site ID" />
 
           <Input
-            label="Expected Article Length (in # of words)"
+            label="記事の想定文字数"
             name="kbArticleLength"
-            placeholder="Enter a knowledge base article length"
+            placeholder="記事の想定文字数を入力してください"
           />
 
           <Input
-            label="Number of Folders to Create"
+            label="フォルダ数"
             name="kbFolderNumber"
-            placeholder="Number of of knowledge base sections"
+            placeholder="生成するフォルダ数を入力してください"
           />
 
           <Input
-            label="Number of Articles to Create per Section"
+            label="各セクションの記事数"
             name="kbArticleNumber"
-            placeholder="Number of of knowledge base sections"
+            placeholder="各セクションの記事数を入力してください"
           />
 
           <Select
-            label="Knowledge Base Language"
+            label="ナレッジベース言語"
             name="kbLanguage"
             optionMap={languageOptions}
           />
 
           <Select
-            label="View Options"
+            label="表示オプション"
             name="viewOptions"
             optionMap={viewOptions}
           />
@@ -97,7 +97,7 @@ export default function KnowledgeBase() {
 
         <FieldSubmit 
           disabled={!knowledgeBaseForm.formState.isValid || isSubmitting}
-          label="Generate Knowledge Base Articles"
+          label="ナレッジベース記事を生成"
         />
       </Form>
 

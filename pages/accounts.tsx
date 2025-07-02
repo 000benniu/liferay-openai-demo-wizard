@@ -51,8 +51,8 @@ export default function Accounts() {
 
   return (
     <Layout
-      description={`Type your business description in the field below and wait for your Accounts. Examples of business descriptions are "automotive supplies", "medical equipment", or "government services".`}
-      title="Liferay Account Generator"
+      description={`下記のフィールドにビジネス説明を入力し、アカウントを生成してください。例:「自動車用品」「医療機器」「行政サービス」`}
+      title="Liferayアカウント生成器"
     >
       <Form
         formProviderProps={accountForm}
@@ -60,21 +60,21 @@ export default function Accounts() {
       >
         <div className="w-700 mb-5 grid grid-cols-2 gap-2 sm:grid-cols-2 md:gap-4">
           <Input
-            label="Business Description"
+            label="ビジネス説明"
             name="businessDescription"
-            placeholder="Enter a Business Description"
+            placeholder="ビジネス説明を入力してください"
           />
 
           <Input
-            label="Number of Accounts"
+            label="アカウント数"
             name="numberOfAccounts"
-            placeholder="Enter a the number of accounts to generate"
+            placeholder="生成するアカウント数を入力してください"
           />
         </div>
 
         <FieldSubmit
           disabled={!accountForm.formState.isValid || isSubmitting}
-          label="Generate Accounts"
+          label="アカウントを生成"
         />
       </Form>
 

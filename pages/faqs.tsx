@@ -69,12 +69,12 @@ export default function Faqs() {
 
   return (
     <Layout
-      description={`Type your topic in the field below and wait for your FAQs. Examples of FAQ topics are "budget planning", "starting a manufacturing company", or "practical uses of sodium bicarbonate".`}
-      title="Liferay FAQ Generator"
+      description={`以下のフィールドにトピックを入力してFAQをお待ちください。FAQトピックの例は「予算計画」、「製造会社の立ち上げ」、「重曹の実用的な用途」などです。`}
+      title="Liferay FAQ生成器"
     >
       <div className="download-options fixed right-5 top-2 rounded p-5 text-lg">
-        <TopNavItem label="FAQ Structure" onClick={handleStructureClick} />
-        <TopNavItem label="FAQ Fragment" onClick={handleFragmentClick} />
+        <TopNavItem label="FAQ構造" onClick={handleStructureClick} />
+        <TopNavItem label="FAQフラグメント" onClick={handleFragmentClick} />
       </div>
 
       <Form
@@ -83,45 +83,45 @@ export default function Faqs() {
       >
         <div className="mb-5 grid grid-cols-1 gap-2 sm:grid-cols-3 md:gap-4">
           <Input
-            label="FAQ Topic"
+            label="FAQトピック"
             name="faqTopic"
-            placeholder="Enter a FAQ Topic"
+            placeholder="FAQトピックを入力してください"
           />
 
           <Input
-            label="Number of Q&A Pairs to Create"
+            label="作成するQ&Aペアの数"
             name="faqNumber"
-            placeholder="Number of FAQs"
+            placeholder="FAQ数"
           />
 
           <Input
-            label="Site ID or Asset Library Group ID"
+            label="サイトIDまたはアセットライブラリグループID"
             name="siteId"
-            placeholder="Enter a site ID or asset library group ID"
+            placeholder="サイトIDまたはアセットライブラリグループIDを入力してください"
           />
 
           <Input
-            label="FAQ Structure ID"
+            label="FAQ構造ID"
             name="structureId"
-            placeholder="Enter the FAQ structure ID"
+            placeholder="FAQ構造IDを入力してください"
           />
 
           <Input
-            label="Web Content Folder ID (0 for Root)"
+            label="WebコンテンツフォルダID（ルートの場合は0）"
             name="folderId"
-            placeholder="Enter a folder ID"
+            placeholder="フォルダIDを入力してください"
           />
 
           <Select
-            label="View Options"
+            label="表示オプション"
             name="viewOptions"
             optionMap={viewOptions}
           />
 
           <Input
-            label="Comma-Delimited Category IDs (Optional)"
+            label="カンマ区切りカテゴリID（オプション）"
             name="categoryIds"
-            placeholder="List of comma-delimited category IDs"
+            placeholder="カンマ区切りのカテゴリIDリスト"
           />
         </div>
 
@@ -137,13 +137,13 @@ export default function Faqs() {
 
         <FieldSubmit 
           disabled={!faqForm.formState.isValid || isSubmitting}
-          label="Generate FAQs" />
+          label="FAQを生成" />
       </Form>
 
       <p className="mb-3 w-1/2 rounded bg-white/10 p-5 text-center text-lg italic text-slate-100">
-        <b>Note:</b> FAQ generation requires a specific content structure.{" "}
+        <b>注意:</b> FAQ生成には特定のコンテンツ構造が必要です。{" "}
         <br />
-        Please use the supplied FAQ Structure and Fragment supplied above.
+        上記で提供されているFAQ構造とフラグメントを使用してください。
       </p>
 
       {isSubmitting ? (

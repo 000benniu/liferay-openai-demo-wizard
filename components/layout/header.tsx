@@ -6,7 +6,7 @@ export default function AppHeader({ desc, title }) {
       <div className="fixed top-0 left-5 p-5">
         <Link className="rounded-xl p-1 text-white " href="/">
           <h3 className="text-1xl font-bold text-[hsl(210,70%,70%)]">
-            ← Return to Index
+            ← インデックスに戻る
           </h3>
         </Link>
       </div>

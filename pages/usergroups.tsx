@@ -18,7 +18,7 @@ export default function UserGroups() {
   const userGroupsForm = useForm<UserGroupsSchema>({
     defaultValues: {
       userGroupNumber: '10',
-      userGroupTopic: 'Job Placement Services and Training',
+      userGroupTopic: '就職支援サービスと研修',
     },
     resolver: zodResolver(schema.userGroups),
   });
@@ -39,8 +39,8 @@ export default function UserGroups() {
 
   return (
     <Layout
-      description='Type your business description in the field below and wait for your user groups to be generated. Examples of business descriptions are "higher education", "automotive manufacturing and engineering", or "healthcare specialists and patients".'
-      title="Liferay User Group Generator"
+      description='下記のフィールドにビジネス説明を入力し、ユーザーグループを生成してください。例:「高等教育」「自動車製造」「医療専門家」'
+      title="Liferayユーザーグループ生成器"
     >
       <Form
         formProviderProps={userGroupsForm}
@@ -48,21 +48,21 @@ export default function UserGroups() {
       >
         <div className="w-700 grid grid-cols-2 gap-2 sm:grid-cols-2 md:gap-4 mb-5">
           <Input
-            label="Business Description"
+            label="ビジネス説明"
             name="userGroupTopic"
-            placeholder="Enter a business description"
+            placeholder="ビジネス説明を入力してください"
           />
 
           <Input
-            label="Number of User Groups"
+            label="ユーザーグループ数"
             name="userGroupNumber"
-            placeholder="Enter a the number of user groups to generate"
+            placeholder="生成するユーザーグループ数を入力してください"
           />
         </div>
 
         <FieldSubmit 
           disabled={!userGroupsForm.formState.isValid || isSubmitting}
-          label="Generate User Group" />
+          label="ユーザーグループを生成" />
       </Form>
 
       {isSubmitting ? (

@@ -25,9 +25,9 @@ export default function Wikis() {
       viewOptions: viewOptions[0].id,
       wikiArticleLength: '60',
       wikiChildPageNumber: '3',
-      wikiNodeName: 'Healthy Living',
+      wikiNodeName: '健康的な生活',
       wikiPageNumber: '3',
-      wikiTopic: 'Healthy Living Advice and Tips',
+      wikiTopic: '健康的な生活のアドバイスとヒント',
     },
     resolver: zodResolver(schema.wiki),
   });
@@ -49,9 +49,9 @@ export default function Wikis() {
   return (
     <Layout
       description={
-        'Type your topic in the field below and wait for your wiki pages. Examples of wiki topics are "company policies and procedures", "environmental issues and sustainability", or "economics and business".'
+        '下記のフィールドにトピックを入力し、Wikiページを生成してください。例:「会社の方針と手順」「環境問題と持続可能性」「経済とビジネス」'
       }
-      title={'Liferay Wiki Content Generator'}
+      title={'Liferay Wiki生成器'}
     >
       <Form
         formProviderProps={wikiForm}
@@ -59,39 +59,39 @@ export default function Wikis() {
       >
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:gap-4 mb-5">
           <Input
-            label="Wiki Topic"
+            label="Wikiトピック"
             name="wikiTopic"
-            placeholder="Enter a wiki topic"
+            placeholder="Wikiトピックを入力してください"
           />
 
           <Input
-            label="Wiki Node Name"
+            label="Wikiノード名"
             name="wikiNodeName"
-            placeholder="Enter a wiki node name"
+            placeholder="Wikiノード名を入力してください"
           />
 
           <Input label="Site ID" name="siteId" placeholder="Enter a site ID" />
 
           <Input
-            label="Expected Page Length (in # of words)"
+            label="ページの想定文字数"
             name="wikiArticleLength"
-            placeholder="Enter a wiki article length"
+            placeholder="ページの想定文字数を入力してください"
           />
 
           <Input
-            label="Number of Pages to Create"
+            label="ページ数"
             name="wikiPageNumber"
-            placeholder="Number of of wiki sections"
+            placeholder="生成するページ数を入力してください"
           />
 
           <Input
-            label="Number of Child Pages per Page"
+            label="各ページの子ページ数"
             name="wikiChildPageNumber"
-            placeholder="Number of of wiki child pages"
+            placeholder="各ページの子ページ数を入力してください"
           />
 
           <Select
-            label="View Options"
+            label="表示オプション"
             name="viewOptions"
             optionMap={viewOptions}
           />
@@ -99,7 +99,7 @@ export default function Wikis() {
 
         <FieldSubmit
           disabled={!wikiForm.formState.isValid || isSubmitting}
-          label="Generate Wiki Node and Pages"
+          label="Wikiノードとページを生成"
         />
       </Form>
 
