@@ -1,0 +1,24 @@
+assemble:
+    - from: .next
+      include: "**/*"
+      into: static
+    - from: public
+      include: "**/*"
+      into: static
+    - from: .
+      include: "package.json"
+      into: static
+    - from: .
+      include: "pnpm-lock.yaml"
+      into: static
+name: liferay-openai-demo-wizard
+oAuthApplicationExternalReferenceCode: user-management-oauth-app
+runtime:
+    type: nodejs
+type: customElement
+urls:
+    - "*.js"
+    - "*.css"
+    - "*.html"
+    - "/api/*"
+    - "/_next/*" 

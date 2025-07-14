@@ -9,7 +9,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "docker:build": "docker build -t liferay-openai-demo-wizard .",
+    "docker:run": "docker run -p 80:80 liferay-openai-demo-wizard",
+    "test:build": "npm run build && npm run start"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
