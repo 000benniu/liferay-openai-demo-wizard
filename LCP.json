@@ -1,19 +1,18 @@
 {
-  "kind": "Deployment",
+  "kind": "StatefulSet",
   "id": "liferayOpenAIWizard",
-  "image": "liferaycloud/os:8.0.0",
-  "memory": 1024,
+  "memory": 2048,
   "cpu": 1,
   "scale": 1,
   "loadBalancer": {
-    "targetPort": 80,
+    "targetPort": 4020,
     "cdn": false,
     "customDomains": []
   },
   "readinessProbe": {
     "httpGet": {
       "path": "/",
-      "port": 80
+      "port": 4020
     },
     "initialDelaySeconds": 30,
     "periodSeconds": 10,
@@ -21,59 +20,13 @@
     "successThreshold": 1,
     "failureThreshold": 3
   },
-  "livenessProbe": {
-    "httpGet": {
-      "path": "/",
-      "port": 80
-    },
-    "initialDelaySeconds": 60,
-    "timeoutSeconds": 10,
-    "failureThreshold": 3,
-    "periodSeconds": 30
-  },
   "env": {
     "NODE_ENV": "production",
-    "PORT": "80"
+    "PORT": "4020"
   },
   "environments": {
-    "prd": {
-      "loadBalancer": {
-        "targetPort": 80,
-        "cdn": false
-      },
-      "scale": 2,
-      "memory": 2048,
-      "cpu": 2,
-      "env": {
-        "NODE_ENV": "production",
-        "LOG_LEVEL": "info"
-      }
-    },
-    "uat": {
-      "loadBalancer": {
-        "targetPort": 80,
-        "cdn": false
-      },
-      "scale": 1,
-      "memory": 1024,
-      "cpu": 1,
-      "env": {
-        "NODE_ENV": "staging",
-        "LOG_LEVEL": "info"
-      }
-    },
-    "dev": {
-      "loadBalancer": {
-        "targetPort": 80,
-        "cdn": false
-      },
-      "scale": 1,
-      "memory": 1024,
-      "cpu": 1,
-      "env": {
-        "NODE_ENV": "development",
-        "LOG_LEVEL": "debug"
-      }
+    "infra": {
+      "deploy": false
     }
   }
 } 
