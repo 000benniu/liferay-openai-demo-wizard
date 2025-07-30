@@ -1,24 +1,23 @@
 {
-  "kind": "StatefulSet",
+  "kind": "Deployment",
   "id": "liferayOpenAIWizard",
   "memory": 2048,
   "cpu": 1,
   "scale": 1,
   "loadBalancer": {
-    "targetPort": 4020,
-    "cdn": false,
-    "customDomains": []
+    "targetPort": 4020
   },
   "readinessProbe": {
     "httpGet": {
       "path": "/",
       "port": 4020
-    },
-    "initialDelaySeconds": 30,
-    "periodSeconds": 10,
-    "timeoutSeconds": 5,
-    "successThreshold": 1,
-    "failureThreshold": 3
+    }
+  },
+  "livenessProbe": {
+    "httpGet": {
+      "path": "/",
+      "port": 4020
+    }
   },
   "env": {
     "NODE_ENV": "production",

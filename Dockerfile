@@ -22,6 +22,10 @@ FROM node:18-alpine
 
 WORKDIR /app
 
+# セキュリティのため非rootユーザーを作成
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+
 # 必要なファイルのみコピー
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
