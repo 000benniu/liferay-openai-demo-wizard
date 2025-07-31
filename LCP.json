@@ -5,23 +5,23 @@
   "cpu": 1,
   "scale": 1,
   "loadBalancer": {
-    "targetPort": 4020
+    "targetPort": 3000
   },
   "readinessProbe": {
     "httpGet": {
       "path": "/",
-      "port": 4020
+      "port": 3000
     }
   },
   "livenessProbe": {
     "httpGet": {
       "path": "/",
-      "port": 4020
+      "port": 3000
     }
   },
   "env": {
     "NODE_ENV": "production",
-    "PORT": "4020"
+    "PORT": "3000"
   },
   "environments": {
     "infra": {

@@ -27,7 +27,7 @@ export default function FieldString({
       setInput(cookies.get(name));
       inputChange(cookies.get(name));
     }
-  }, [defaultValue, inputChange, name]);
+  }, []);
 
   return (
     <label className="flex flex-col text-slate-200">

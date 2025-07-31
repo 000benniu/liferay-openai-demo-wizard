@@ -73,15 +73,13 @@ export default function AppFooter() {
   useEffect(() => {
     if (cookies.get(APP_CONFIG)) {
       let appConfig = cookies.get(APP_CONFIG);
-
-      console.log('Using existing appConfig');
-
       setAppConfig(appConfig);
       checkConfig(appConfig);
     } else {
       checkConfig(appConfig);
     }
-  }, [appConfig, checkConfig]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
 
 
