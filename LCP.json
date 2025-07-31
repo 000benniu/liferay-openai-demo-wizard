@@ -1,0 +1,31 @@
+{
+    "kind": "Deployment",
+    "id": "liferayOpenAIWizard",
+    "memory": 2048,
+    "cpu": 1,
+    "scale": 1,
+    "loadBalancer": {
+      "targetPort": 3000
+    },
+    "readinessProbe": {
+      "httpGet": {
+        "path": "/",
+        "port": 3000
+      }
+    },
+    "livenessProbe": {
+      "httpGet": {
+        "path": "/",
+        "port": 3000
+      }
+    },
+    "env": {
+      "NODE_ENV": "production",
+      "PORT": "3000"
+    },
+    "environments": {
+      "infra": {
+        "deploy": false
+      }
+    }
+  } 
