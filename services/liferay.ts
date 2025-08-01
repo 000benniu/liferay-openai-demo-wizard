@@ -37,6 +37,12 @@ export const axiosInstance = (
         }),
       ...headers,
     },
+    // Disable SSL verification for self-signed certificates (development only)
+    ...(process.env.NODE_ENV === 'development' && {
+      httpsAgent: new (require('https').Agent)({
+        rejectUnauthorized: false
+      })
+    })
   });
 
   liferayAxios.interceptors.request.use(async (request) => {
