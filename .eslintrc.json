@@ -5,11 +5,7 @@
   ],
   "plugins": ["perfectionist"],
   "rules": {
-    "perfectionist/sort-objects": [
-      "error",
-      {
-        "type": "natural"
-      }
-    ]
+    "perfectionist/sort-objects": "off",
+    "perfectionist/sort-imports": "warn"
   }
 }

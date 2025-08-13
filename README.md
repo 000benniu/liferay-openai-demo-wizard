@@ -103,6 +103,25 @@ You should now be able to access the app at [http://localhost:3000](http://local
 
 Configuration for the application is now done through the UI. Use the gear icon in the lower right of the screen to set your environment properties.
 
+## Deploy to Liferay PaaS
+
+1. Build the app locally:
+
+```bash
+npm run build
+```
+
+2. Deploy the app to Liferay PaaS using the `lcp deploy` command. Make sure your Liferay PaaS environment has enough resources.
+
+```bash
+lcp deploy
+```
+
+> [!TIP]
+> After your first deployment, it may take 30 minutes or more for the network to start and the app to become available.
+> The `lcp deploy` command might not exit normally. Once you confirm the app is up and running, you can stop the process.
+
+
 ---
 
 > [!WARNING]
